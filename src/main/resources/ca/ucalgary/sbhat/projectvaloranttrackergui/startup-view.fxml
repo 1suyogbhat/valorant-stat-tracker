@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<StackPane fx:id="rootPane" xmlns="http://javafx.com/javafx/23.0.1"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="ca.ucalgary.sbhat.projectvaloranttrackergui.startupController">
+    <children>
+        <ImageView fx:id="backgroundImageView" preserveRatio="false" pickOnBounds="true">
+            <image>
+                <Image url="@../../../../images/startup.png" />
+            </image>
+            <effect>
+                <DropShadow />
+            </effect>
+        </ImageView>
+        <VBox spacing="20" alignment="CENTER">
+            <Text fx:id="startupText"
+                  text="Welcome to Valorant KDA Tracker!"
+                  style="-fx-font-size: 36px; -fx-fill: white;"
+                  opacity="0" />
+            <VBox fx:id="proceedBox" spacing="10" alignment="CENTER" opacity="0">
+                <Text text="Click the button to proceed"
+                      style="-fx-font-size: 20px; -fx-fill: white;" />
+                <Button text="Proceed" onAction="#handleProceed"/>
+            </VBox>
+        </VBox>
+    </children>
+</StackPane>

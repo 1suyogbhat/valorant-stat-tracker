@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'VALORANT';
+    src: url("../fonts/ValorantFont.ttf");
+}
+
+Label, GridPane, Button, MenuItem, Menu, Text, ListView, TableView, TableColumn, TableRow {
+    -fx-font-family: 'VALORANT';
+}

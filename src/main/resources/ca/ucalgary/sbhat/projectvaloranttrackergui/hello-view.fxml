@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.ucalgary.sbhat.projectvaloranttrackergui.HelloController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="loadMenuItem" mnemonicParsing="false" onAction="#loadMenuItem" text="Load" />
+                  <MenuItem fx:id="saveGame" mnemonicParsing="false" onAction="#saveMenuItem" text="Save" />
+                  <MenuItem fx:id="quitMenuItem" mnemonicParsing="false" onAction="#closeProgram" text="Quit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem fx:id="deleteMenuItem" mnemonicParsing="false" onAction="#handleDeleteMenuItem" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#handleAboutMenuItem" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <SplitPane prefHeight="373.0" prefWidth="179.0" BorderPane.alignment="CENTER">
+        <items>
+            <AnchorPane prefHeight="546.0" prefWidth="199.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="32.0" layoutY="9.0" text="MENU" textAlignment="CENTER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <GridPane fx:id="menuGrid" layoutX="3.0" layoutY="34.0" prefHeight="421.0" prefWidth="170.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <RadioButton fx:id="createPlayerRadio" mnemonicParsing="false" onAction="#handleRadioSelect" prefHeight="28.0" prefWidth="170.0" text="Create New Player" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="createGameRadio" mnemonicParsing="false" onAction="#handleRadioSelect" prefHeight="18.0" prefWidth="170.0" text="Create New Game" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                        <RadioButton fx:id="printPlayersRadio" mnemonicParsing="false" onAction="#handleRadioSelect" prefHeight="35.0" prefWidth="170.0" text="Display All&#10;Existing Players" GridPane.rowIndex="3" />
+                        <RadioButton fx:id="leaderBoardRadio" mnemonicParsing="false" prefHeight="18.0" prefWidth="166.0" text="Leader Board" GridPane.rowIndex="4" />
+                        <RadioButton fx:id="statSearchRadio" mnemonicParsing="false" onAction="#handleRadioSelect" prefHeight="18.0" prefWidth="165.0" text="Player Statistics" GridPane.rowIndex="5" />
+                        <RadioButton fx:id="bestWorstMapRadio" layoutX="10.0" layoutY="174.0" mnemonicParsing="false" onAction="#handleRadioSelect" prefHeight="18.0" prefWidth="166.0" text="Best/Worst Map" GridPane.rowIndex="6" />
+                        <RadioButton fx:id="bestWorstAgentRadio" layoutX="10.0" layoutY="205.0" mnemonicParsing="false" onAction="#handleRadioSelect" prefHeight="42.0" prefWidth="163.0" text="Best/Worst&#10;Agent" GridPane.rowIndex="7" />
+                        <RadioButton fx:id="winningStreakRadio" layoutX="10.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleRadioSelect" prefHeight="18.0" prefWidth="165.0" text="Winning Streak" GridPane.rowIndex="8" />
+                     </children>
+                  </GridPane>
+                  <Line endX="412.0" endY="65.25735473632812" layoutX="-412.0" layoutY="-4.0" startX="589.0253295898438" startY="65.2573471069336" stroke="#ababab" AnchorPane.bottomAnchor="483.58577728271484" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.267578125" AnchorPane.topAnchor="60.55023956298828" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </left>
+   <right>
+      <SplitPane prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="571.0" prefWidth="251.0">
+               <children>
+                  <Line endX="379.0" endY="64.00000762939453" layoutX="-182.0" layoutY="-4.0" startX="180.2666015625" startY="64.50000762939453" stroke="#ababab" />
+                  <Label alignment="CENTER" layoutX="26.0" layoutY="1.0" prefHeight="58.0" prefWidth="145.0" text="DETAILS" textAlignment="CENTER">
+                     <font>
+                        <Font size="31.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="playerGamesListView" layoutX="-1.0" layoutY="60.0" prefHeight="492.0" prefWidth="200.0" AnchorPane.bottomAnchor="-6.5" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </right>
+   <center>
+      <AnchorPane fx:id="mainContentArea" prefHeight="373.0" prefWidth="447.0" BorderPane.alignment="CENTER">
+         <children>
+            <Line fx:id="mainLine" endX="431.76666259765625" endY="64.0" layoutX="4.0" layoutY="-1.0" startX="10.189193725585938" startY="64.0" stroke="#ababab" AnchorPane.bottomAnchor="486.5" AnchorPane.leftAnchor="13.5" AnchorPane.rightAnchor="13.733352661132812" AnchorPane.topAnchor="62.5" />
+              <Label fx:id="mainLabel" alignment="CENTER" layoutX="27.0" layoutY="6.0" prefHeight="58.0" prefWidth="399.0" text="VALORANT TRACKER" textAlignment="CENTER">
+                 <font>
+                     <Font size="37.0" />
+                 </font>
+              </Label>
+            <Label fx:id="whichMenuOptionChosen" alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="58.0" prefHeight="62.0" prefWidth="340.0" text="Select Menu Option" textAlignment="CENTER">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="saveGamePane" layoutX="125.0" layoutY="120.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <ComboBox fx:id="savePlayerComboBox" layoutX="25.0" layoutY="41.0" prefWidth="150.0" promptText="-" />
+                  <Label layoutX="41.0" layoutY="14.0" text="Select Player To Save" />
+                  <Button fx:id="savePlayerButton" layoutX="75.0" layoutY="88.0" mnemonicParsing="false" text="SAVE" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="statSearchPane" layoutX="14.0" layoutY="81.0" prefHeight="465.0" prefWidth="422.0" visible="false" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="81.0">
+               <children>
+                  <VBox layoutX="72.0" layoutY="118.0" prefHeight="28.0" prefWidth="110.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="12.0" layoutY="55.0" prefHeight="35.0" prefWidth="167.0" text="Enter Username" textAlignment="RIGHT" />
+                  <TextField fx:id="statSearchUsernameTextField" layoutX="182.0" layoutY="59.0" />
+                  <Button fx:id="statSearchButton" layoutX="184.0" layoutY="95.0" mnemonicParsing="false" onAction="#handleStatSearch" prefHeight="26.0" prefWidth="157.0" text="Stat Search" />
+                  <TextArea fx:id="statSearchTextArea" layoutX="27.0" layoutY="165.0" prefHeight="233.0" prefWidth="368.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font></TextArea>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="addGamePane" layoutX="18.0" layoutY="105.0" prefHeight="356.0" prefWidth="414.0" visible="false" AnchorPane.bottomAnchor="89.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="105.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" layoutX="27.0" layoutY="26.0" prefHeight="17.0" prefWidth="153.0" text="Player Username" />
+                  <Label alignment="CENTER_RIGHT" layoutX="54.0" layoutY="62.0" prefHeight="17.0" prefWidth="145.0" text="Map Played" />
+                  <ComboBox fx:id="mapComboBox" layoutX="202.0" layoutY="57.0" prefHeight="26.0" prefWidth="132.0" promptText="Select Map.." />
+                  <Label alignment="CENTER_RIGHT" layoutX="44.0" layoutY="94.0" prefHeight="17.0" prefWidth="154.0" text="Game Mode " />
+                  <ComboBox fx:id="gameModeComboBox" layoutX="202.0" layoutY="90.0" prefHeight="26.0" prefWidth="133.0" promptText="Game Mode..." />
+                  <Label alignment="CENTER_RIGHT" layoutX="17.0" layoutY="130.0" prefHeight="17.0" prefWidth="184.0" text="Agent Played" />
+                  <ComboBox fx:id="agentComboBox" layoutX="202.0" layoutY="125.0" prefHeight="26.0" prefWidth="131.0" promptText="Agent Played..." />
+                  <Label alignment="CENTER_RIGHT" layoutX="67.0" layoutY="164.0" prefHeight="17.0" prefWidth="131.0" text="Match Result" />
+                  <ComboBox fx:id="createGameWinLossComboBox" layoutX="203.0" layoutY="159.0" prefHeight="26.0" prefWidth="128.0" promptText="Win/Loss" />
+                  <Label layoutX="79.0" layoutY="318.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="73.0" layoutY="196.0" prefHeight="25.0" prefWidth="122.0" text="Kill Count" />
+                  <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="236.0" prefHeight="17.0" prefWidth="140.0" text="Death Count" />
+                  <Label alignment="CENTER_RIGHT" layoutX="38.0" layoutY="275.0" prefHeight="17.0" prefWidth="158.0" text="Assist Count" />
+                  <TextField fx:id="createGameKillsTextField" layoutX="202.0" layoutY="195.0" prefHeight="27.0" prefWidth="129.0" />
+                  <TextField fx:id="createGameDeathsTextField" layoutX="202.0" layoutY="231.0" prefHeight="27.0" prefWidth="128.0" />
+                  <TextField fx:id="createGameAssistsTextField" layoutX="203.0" layoutY="270.0" prefHeight="26.0" prefWidth="127.0" />
+                  <Button fx:id="createGameButton" layoutX="105.0" layoutY="312.0" mnemonicParsing="false" onAction="#createGameButtonClicked" prefHeight="26.0" prefWidth="207.0" text="CREATE GAME" textFill="#d30e0e" />
+                  <ComboBox fx:id="createGameUsernameComboBox" layoutX="184.0" layoutY="21.0" prefHeight="26.0" prefWidth="151.0" promptText="Select Username" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="addPlayerPane" layoutX="22.0" layoutY="99.0" prefHeight="451.0" prefWidth="406.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="99.0">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="119.0" layoutY="156.0" prefHeight="69.0" prefWidth="265.0" text="IRON | IRON1 | IRON2 | IRON3" textAlignment="CENTER" textFill="#8d8989" wrapText="true" />
+                  <Label alignment="CENTER_RIGHT" layoutX="39.0" layoutY="38.0" prefHeight="27.0" prefWidth="161.0" text="Enter Username" />
+                  <Label alignment="CENTER_RIGHT" layoutX="51.0" layoutY="74.0" prefHeight="30.0" prefWidth="148.0" text="Enter Rank">
+                     <font>
+                        <Font name="Skia" size="13.0" />
+                     </font></Label>
+                  <TextField fx:id="usernameTextField" layoutX="202.0" layoutY="38.0" prefHeight="26.0" prefWidth="99.0" />
+                  <TextField fx:id="rankTextField" layoutX="202.0" layoutY="74.0" prefHeight="26.0" prefWidth="101.0" />
+                  <Label fx:id="validRanksLabel" alignment="CENTER" layoutX="113.0" layoutY="136.0" prefHeight="53.0" prefWidth="170.0" text="---VALID RANKS--" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="createPlayerButton" layoutX="119.0" layoutY="113.0" mnemonicParsing="false" onAction="#handleCreatePlayer" prefHeight="26.0" prefWidth="160.0" text="Create Player" />
+                  <Label layoutX="77.0" layoutY="185.0" prefHeight="70.0" prefWidth="316.0" text="BRONZE | BRONZE1 | BRONZE2 | BRONZE3 " textFill="#a47732" />
+                  <Label layoutX="92.0" layoutY="254.0" prefHeight="58.0" prefWidth="221.0" text="GOLD | GOLD1 | GOLD2 | GOLD3 " textFill="#e4d335" />
+                  <Label layoutX="66.0" layoutY="304.0" prefHeight="81.0" prefWidth="352.0" text="DIAMOND | DIAMOND1 | DIAMOND2 | DIAMOND3 " textFill="#a739da" />
+                  <Label layoutX="52.0" layoutY="356.0" prefHeight="43.0" prefWidth="345.0" text="IMMORTAL | IMMORTAL1 | IMMORTAL2 | IMMORTAL3 " textFill="RED">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="92.0" layoutY="224.0" prefHeight="54.0" prefWidth="247.0" text="SILVER | SILVER1 | SILVER2 | SILVER3 " />
+                  <Label layoutX="52.0" layoutY="284.0" prefHeight="57.0" prefWidth="345.0" text="PLATINUM | PLATINUM1 | PLATINUM2 | PLATINUM3 " textFill="#29bca1" />
+                  <ImageView fx:id="ironPNG" fitHeight="23.0" fitWidth="23.0" layoutX="91.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/iron.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="27.0" fitWidth="28.0" layoutX="49.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="26.0" fitWidth="35.0" layoutX="50.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/Bronze_3_Rank.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="90.0" fitWidth="24.0" layoutX="33.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../3293-valorant-silver-3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="31.0" layoutX="54.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Gold_3_Rank.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="31.0" layoutX="24.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/Immortal_3_Rank.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="66.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/3293-valorant-silver-3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="34.0" layoutX="65.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/Gold_3_Rank.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="21.0" fitWidth="22.0" layoutX="112.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="27.0" fitWidth="24.0" layoutX="25.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/Platinum_3_Rank.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="25.0" layoutX="39.0" layoutY="332.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/Diamond_3_Rank.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="44.0" fitWidth="40.0" layoutX="86.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="20.0" fitWidth="26.0" layoutX="103.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/Radiant_Rank%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="127.0" layoutY="393.0" prefHeight="35.0" prefWidth="164.0" text="RADIANT | UNRANKED" />
+               </children>
+            </AnchorPane>
+             <AnchorPane fx:id="existingPlayersPane" layoutX="22.0" layoutY="66.0" prefHeight="447.0" prefWidth="407.0" visible="false" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="66.0">
+                 <TableView fx:id="playersTableView" layoutX="14.0" layoutY="54.0" prefHeight="345.0" prefWidth="380.0">
+                     <columns>
+                         <TableColumn fx:id="usernameColumn" prefWidth="190.0" text="USERNAME" />
+                         <TableColumn fx:id="rankColumn" prefWidth="189.0" text="RANK" />
+                     </columns>
+                 </TableView>
+                 <Button fx:id="loadPlayersButton" layoutX="14.0" layoutY="411.0" mnemonicParsing="false" onAction="#handleExistingPlayers" text="Load Players" />
+               <ComboBox fx:id="sortOrderComboBox" layoutX="263.0" layoutY="411.0" prefHeight="26.0" prefWidth="130.0" promptText="Select Sort..." />
+             </AnchorPane>
+            <AnchorPane fx:id="leaderboardPane" layoutX="16.0" layoutY="118.0" prefHeight="394.0" prefWidth="422.0" visible="false" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="118.0">
+               <children>
+                  <TableView fx:id="leaderboardTable" layoutX="8.0" layoutY="19.0" prefHeight="356.0" prefWidth="403.0">
+                    <columns>
+                      <TableColumn fx:id="rankColumnLeaderBoard" prefWidth="72.5" text="RANK" />
+                      <TableColumn fx:id="nameColumn" prefWidth="104.0" text="PLAYER" />
+                        <TableColumn fx:id="kdaColumn" prefWidth="73.44515991210938" text="KDA" />
+                        <TableColumn fx:id="scoreColumn" prefWidth="152.55487060546875" text="PERFORMANCE SCORE" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="bestWorstMapPane" layoutX="28.0" layoutY="116.0" prefHeight="426.0" prefWidth="394.0" visible="false" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="102.0">
+               <children>
+                  <Button layoutX="174.0" layoutY="75.0" mnemonicParsing="false" onAction="#handleBestWorstMapOfPlayer" text="Enter" />
+                  <Label alignment="CENTER_RIGHT" layoutX="16.0" layoutY="27.0" prefHeight="40.0" prefWidth="132.0" text="Username" />
+                  <RadioButton fx:id="worstMapRadioButton" layoutX="225.0" layoutY="119.0" mnemonicParsing="false" text="Worst Map" />
+                  <RadioButton fx:id="bestMapRadioButton" layoutX="79.0" layoutY="119.0" mnemonicParsing="false" text="Best Map" />
+                  <TextField fx:id="playerUsernameTextField" layoutX="154.0" layoutY="35.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="bestWorstAgentPane" layoutX="17.0" layoutY="89.0" prefHeight="456.0" prefWidth="417.0" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="89.0">
+               <children>
+                  <Button layoutX="185.0" layoutY="88.0" mnemonicParsing="false" onAction="#handleBestWorstAgentOfPlayer" text="Enter" />
+                  <Label alignment="CENTER_RIGHT" layoutX="26.0" layoutY="42.0" prefHeight="40.0" prefWidth="134.0" text="Username" textAlignment="RIGHT" />
+                  <RadioButton fx:id="worstAgentRadioButton" layoutX="236.0" layoutY="132.0" mnemonicParsing="false" text="Worst Agent" />
+                  <RadioButton fx:id="bestAgentRadioButton" layoutX="90.0" layoutY="132.0" mnemonicParsing="false" text="Best Agent" />
+                  <TextField fx:id="playerUsernameTextFieldBWAgent" layoutX="165.0" layoutY="49.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="winningStreakPane" layoutX="22.0" layoutY="132.0" prefHeight="363.0" prefWidth="408.0" visible="false">
+               <children>
+                  <TableView fx:id="winningStreakTable" layoutX="9.0" layoutY="10.0" prefHeight="341.0" prefWidth="391.0">
+                    <columns>
+                      <TableColumn fx:id="usernameColWinningStreak" prefWidth="97.60003089904785" text="Username" />
+                      <TableColumn fx:id="rankColWinningStreak" prefWidth="53.60003662109375" text="Rank" />
+                        <TableColumn fx:id="maxStreakCol" prefWidth="70.4000244140625" text="Max Streak" />
+                        <TableColumn fx:id="minStreakCol" prefWidth="69.5999755859375" text="Min Streak" />
+                        <TableColumn fx:id="currentStreakCol" prefWidth="109.5999755859375" text="Current Streak" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <HBox prefHeight="25.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="createGameStatusLabel" alignment="TOP_LEFT" prefHeight="23.0" prefWidth="784.0" text="createnewhaha" textFill="#eeeded">
+               <padding>
+                  <Insets bottom="3.0" left="3.0" top="3.0" />
+               </padding>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>
