@@ -6,6 +6,8 @@
 Date: April 21st 2025
 
 ## Description
+Java desktop application built with JavaFX and Maven that tracks and analyzes Valorant match statistics through a graphical user interface.
+
 The Valorant Stat Tracker is a program that allows users to manage and view their in-game statistics about their Valorant matches. Users can:
 - Create and manage player profiles with usernames and ranks.
 - Record game details including map, agent, game mode, kills, deaths, assists, and game results (win/loss).
