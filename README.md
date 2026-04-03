@@ -47,6 +47,14 @@ The application is designed with an object-oriented structure using Java classes
 5. Follow the on-screen instructions to create players, record games, and view statistics.
 6. The application should launch with the JavaFX UI.
 
+## Screenshots
+
+### Startup Screen
+![Startup](gui-startup.png)
+
+### Main Program
+![Main GUI](gui-main.png)
+
 ## Technologies Used
 - Java 23
 - JavaFX
